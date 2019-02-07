@@ -1,0 +1,4 @@
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Common\bin\Debug\Common.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Common\bin\Debug\Common.pdb
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Common\obj\Debug\Common.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Common\obj\Debug\Common.pdb

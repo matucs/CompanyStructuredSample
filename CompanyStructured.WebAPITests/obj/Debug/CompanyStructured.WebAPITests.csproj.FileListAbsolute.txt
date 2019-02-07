@@ -1,0 +1,17 @@
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructured.WebAPITests.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructured.WebAPITests.pdb
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\Common.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructuredSample.Entities.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructuredSample.Repository.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\EntityFramework.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\Common.pdb
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructuredSample.Entities.pdb
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructuredSample.Repository.pdb
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\EntityFramework.xml
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.WebAPITests.csprojResolveAssemblyReference.cache
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.WebAPITests.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.WebAPITests.pdb
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructuredSample.Entities.dll.config
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructuredSample.Repository.dll.config
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.WebAPITests.csproj.CoreCompileInputs.cache

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TradeshiftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Node">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <NavigationProperty Name="Node1" Relationship="Self.FK_Node_Node" FromRole="Node" ToRole="Node1" />
+    <NavigationProperty Name="Node2" Relationship="Self.FK_Node_Node" FromRole="Node1" ToRole="Node" />
+  </EntityType>
+  <Association Name="FK_Node_Node">
+    <End Role="Node" Type="Self.Node" Multiplicity="0..1" />
+    <End Role="Node1" Type="Self.Node" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Node">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Node1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TradeshiftEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Node" EntityType="Self.Node" />
+    <AssociationSet Name="FK_Node_Node" Association="Self.FK_Node_Node">
+      <End Role="Node" EntitySet="Node" />
+      <End Role="Node1" EntitySet="Node" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

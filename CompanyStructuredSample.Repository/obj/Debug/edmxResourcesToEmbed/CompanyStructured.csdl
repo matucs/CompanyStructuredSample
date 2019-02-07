@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TradeShiftModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Node">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="parentId" Type="Int32" />
+    <NavigationProperty Name="Node1" Relationship="Self.FK_Node_Node1" FromRole="Node" ToRole="Node1" />
+    <NavigationProperty Name="Node2" Relationship="Self.FK_Node_Node1" FromRole="Node1" ToRole="Node" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ParentId" Type="Int32" />
+    <NavigationProperty Name="Node11" Relationship="TradeShiftModel.FK_Node_Node11" FromRole="Node" ToRole="Node1" />
+    <NavigationProperty Name="Node21" Relationship="TradeShiftModel.FK_Node_Node11" FromRole="Node1" ToRole="Node" />
+  </EntityType>
+  <Association Name="FK_Node_Node1">
+    <End Role="Node" Type="Self.Node" Multiplicity="0..1" />
+    <End Role="Node1" Type="Self.Node" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Node">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Node1">
+        <PropertyRef Name="parentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TradeShift" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Node" EntityType="Self.Node" />
+    <AssociationSet Name="FK_Node_Node1" Association="Self.FK_Node_Node1">
+      <End Role="Node" EntitySet="Node" />
+      <End Role="Node1" EntitySet="Node" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Node_Node11" Association="TradeShiftModel.FK_Node_Node11">
+      <End Role="Node" EntitySet="Node" />
+      <End Role="Node1" EntitySet="Node" />
+    </AssociationSet>
+  </EntityContainer>
+  <Association Name="FK_Node_Node11">
+    <End Type="TradeShiftModel.Node" Role="Node" Multiplicity="0..1" />
+    <End Type="TradeShiftModel.Node" Role="Node1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Node">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Node1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

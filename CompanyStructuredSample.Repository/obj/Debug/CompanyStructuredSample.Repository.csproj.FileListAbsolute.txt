@@ -1,0 +1,11 @@
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\CompanyStructuredSample.Repository.dll.config
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\CompanyStructuredSample.Repository.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\CompanyStructuredSample.Repository.pdb
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\EntityFramework.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\EntityFramework.xml
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.dll
+c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.pdb
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.csproj.CoreCompileInputs.cache
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.csprojResolveAssemblyReference.cache

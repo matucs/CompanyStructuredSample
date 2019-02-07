@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TradeShiftModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Node">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+  </EntityType>
+  <Association Name="FK_Node_Node1">
+    <End Role="Node" Type="Self.Node" Multiplicity="0..1" />
+    <End Role="Node1" Type="Self.Node" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Node">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Node1">
+        <PropertyRef Name="ParentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TradeShiftModelStoreContainer">
+    <EntitySet Name="Node" EntityType="Self.Node" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Node_Node1" Association="Self.FK_Node_Node1">
+      <End Role="Node" EntitySet="Node" />
+      <End Role="Node1" EntitySet="Node" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
