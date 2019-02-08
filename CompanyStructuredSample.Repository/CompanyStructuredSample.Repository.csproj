@@ -66,6 +66,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CompanyStructuredModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="GetDescendantsByParentId_Result.cs">
+      <DependentUpon>CompanyStructuredModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Node.cs">
       <DependentUpon>CompanyStructuredModel.tt</DependentUpon>
     </Compile>

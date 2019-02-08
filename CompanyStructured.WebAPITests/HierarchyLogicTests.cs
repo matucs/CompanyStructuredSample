@@ -17,7 +17,7 @@ namespace CompanyStructured.LogicTests
                 parentId = 0
             };
             CompanyHierarchy  companyhierarchytestobj = new CompanyHierarchy();
-            IEnumerable <Node> children = companyhierarchytestobj.Get_all_children(node);
+             companyhierarchytestobj.Get_all_children(node);
 
         }
 

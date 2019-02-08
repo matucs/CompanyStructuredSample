@@ -15,7 +15,7 @@ namespace Client_webapi_consumer_.Controllers
         string Baseurl = "http://localhost:9907/";
         public async Task<ActionResult> Index(int id)
         {
-            List<NodeByParentName> nodes = new List<NodeByParentName>();
+            List<Node> nodes = new List<Node>();
 
             using (var client = new HttpClient())
             {
@@ -36,7 +36,7 @@ namespace Client_webapi_consumer_.Controllers
 
                     //Deserializing the response recieved from web api and storing into the Node list  
 
-                    nodes = new JavaScriptSerializer().Deserialize<List<NodeByParentName>>(Response);
+                    nodes = new JavaScriptSerializer().Deserialize<List<Node>>(Response);
                 }
                 //returning the node list to view  
                 return View(nodes);

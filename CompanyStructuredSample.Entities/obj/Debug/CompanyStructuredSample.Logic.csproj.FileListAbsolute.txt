@@ -1,4 +1,3 @@
-c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\obj\Debug\CompanyStructuredSample.Logic.csprojResolveAssemblyReference.cache
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\bin\Debug\CompanyStructuredSample.Entities.dll.config
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\bin\Debug\CompanyStructuredSample.Entities.dll
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\bin\Debug\CompanyStructuredSample.Entities.pdb
@@ -14,3 +13,5 @@ c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Com
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\obj\Debug\CompanyStructuredSample.Entities.pdb
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\bin\Debug\CompanyStructuredSample.Repository.dll.config
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\obj\Debug\CompanyStructuredSample.Logic.csproj.CoreCompileInputs.cache
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\obj\Debug\CompanyStructuredSample.Logic.csprojAssemblyReference.cache
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Entities\obj\Debug\CompanyStructuredSample.Logic.csproj.CopyComplete

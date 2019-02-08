@@ -12,11 +12,13 @@ namespace CompanyStructuredSample.Repository
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
-    public partial class CompanyStructuredContext : DbContext
+    public partial class Entities : DbContext
     {
-        public CompanyStructuredContext()
-            : base("name=CompanyStructuredContext")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -26,5 +28,14 @@ namespace CompanyStructuredSample.Repository
         }
     
         public virtual DbSet<Node> Node { get; set; }
+    
+        public virtual ObjectResult<GetDescendantsByParentId_Result> GetDescendantsByParentId(Nullable<int> parentId1)
+        {
+            var parentId1Parameter = parentId1.HasValue ?
+                new ObjectParameter("parentId1", parentId1) :
+                new ObjectParameter("parentId1", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDescendantsByParentId_Result>("GetDescendantsByParentId", parentId1Parameter);
+        }
     }
 }

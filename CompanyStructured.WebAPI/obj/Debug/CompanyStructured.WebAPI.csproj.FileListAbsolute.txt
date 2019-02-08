@@ -1,4 +1,3 @@
-c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\obj\Debug\CompanyStructured.WebAPI.csprojResolveAssemblyReference.cache
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\roslyn\csc.exe
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -53,10 +52,8 @@ C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Com
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Web.WebPages.xml
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Web.WebPages.Deployment.xml
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Web.WebPages.Razor.xml
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.dll
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.WebRequest.dll
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.xml
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.WebRequest.xml
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.Extensions.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.Formatting.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.Primitives.dll
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\obj\Debug\CompanyStructured.WebAPI.csprojAssemblyReference.cache
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\obj\Debug\CompanyStructured.WebAPI.csproj.CopyComplete

@@ -1,4 +1,3 @@
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.LogicTests.csprojResolveAssemblyReference.cache
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.LogicTests.csproj.CoreCompileInputs.cache
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.WebAPITests.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.WebAPITests.pdb
@@ -18,3 +17,5 @@ C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Com
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\CompanyStructured.WebAPITests.dll.config
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.LogicTests.csprojAssemblyReference.cache
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPITests\obj\Debug\CompanyStructured.LogicTests.csproj.CopyComplete

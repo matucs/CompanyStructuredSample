@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="CompanyStructuredModelStoreContainer" CdmEntityContainer="CompanyStructuredContext">
+  <EntityContainerMapping StorageEntityContainer="CompanyStructuredModelStoreContainer" CdmEntityContainer="Entities">
     <EntitySetMapping Name="Node">
       <EntityTypeMapping TypeName="CompanyStructuredModel.Node">
         <MappingFragment StoreEntitySet="Node">
@@ -10,5 +10,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetDescendantsByParentId" FunctionName="CompanyStructuredModel.Store.GetDescendantsByParentId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CompanyStructuredModel.GetDescendantsByParentId_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

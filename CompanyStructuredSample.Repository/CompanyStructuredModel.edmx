@@ -4,12 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="CompanyStructuredModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CompanyStructuredModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Node">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
           <Property Name="ParentId" Type="int" />
         </EntityType>
@@ -25,6 +25,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetDescendantsByParentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parentId1" Type="int" Mode="In" />
+        </Function>
         <EntityContainer Name="CompanyStructuredModelStoreContainer">
           <EntitySet Name="Node" EntityType="Self.Node" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Node_Node1" Association="Self.FK_Node_Node1">
@@ -32,7 +35,8 @@
             <End Role="Node1" EntitySet="Node" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CompanyStructuredModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -40,7 +44,7 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="ParentId" Type="Int32" />
           <NavigationProperty Name="Node1" Relationship="Self.FK_Node_Node1" FromRole="Node" ToRole="Node1" />
@@ -58,19 +62,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CompanyStructuredContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Node" EntityType="Self.Node" />
           <AssociationSet Name="FK_Node_Node1" Association="Self.FK_Node_Node1">
             <End Role="Node" EntitySet="Node" />
             <End Role="Node1" EntitySet="Node" />
           </AssociationSet>
+          <FunctionImport Name="GetDescendantsByParentId" ReturnType="Collection(CompanyStructuredModel.GetDescendantsByParentId_Result)">
+            <Parameter Name="parentId1" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
+        <ComplexType Name="GetDescendantsByParentId_Result">
+          <Property Type="Int32" Name="Id" Nullable="true" />
+          <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="ParentId" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CompanyStructuredModelStoreContainer" CdmEntityContainer="CompanyStructuredContext">
+        <EntityContainerMapping StorageEntityContainer="CompanyStructuredModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="Node">
             <EntityTypeMapping TypeName="CompanyStructuredModel.Node">
               <MappingFragment StoreEntitySet="Node">
@@ -80,6 +92,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetDescendantsByParentId" FunctionName="CompanyStructuredModel.Store.GetDescendantsByParentId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="CompanyStructuredModel.GetDescendantsByParentId_Result">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

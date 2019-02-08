@@ -6,6 +6,7 @@ using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CompanyStructured.Logic
@@ -17,7 +18,7 @@ namespace CompanyStructured.Logic
         public bool Isroot(CompanyStructured.Common.Models.Node n)
         {
             bool result = false;
-            using (var ctx = new CompanyStructuredContext())
+            using (var ctx = new Entities())
             {
                 result = n.Equals(ctx.Node.Where(r => r.ParentId.Equals(0)).First())
                          ? true : false;
@@ -26,14 +27,14 @@ namespace CompanyStructured.Logic
         }
         public CompanyStructured.Common.Models.Node GetRoot()
         {
-            using (var ctx = new CompanyStructuredContext())
+            using (var ctx = new Entities())
             {
-                CompanyStructuredSample.Repository.Node node = ctx.Node.Where(r => r.ParentId == null ).FirstOrDefault();
+                CompanyStructuredSample.Repository.Node node = ctx.Node.Where(r => r.ParentId == null).FirstOrDefault();
                 CompanyStructured.Common.Models.Node comnode = new CompanyStructured.Common.Models.Node
                 {
                     Id = node.Id,
                     name = node.Name,
-                    parentId= node.ParentId
+                    parentId = node.ParentId
                 };
                 return comnode;
             }
@@ -44,17 +45,17 @@ namespace CompanyStructured.Logic
             CompanyStructuredSample.Repository.Node rnode = new CompanyStructuredSample.Repository.Node
             {
                 Id = n.Id,
-                Name =n.name,
+                Name = n.name,
                 ParentId = n.parentId
             };
 
-            using (var ctx = new CompanyStructuredContext())
-            {   
-                while(rnode.ParentId !=null)
+            using (var ctx = new Entities())
+            {
+                while (rnode.ParentId != null)
                 {
-                   Common.Models.Node node = Getnode(n.Id);
-                   rnode = GetParent(rnode.Id);
-                   height++;
+                    Common.Models.Node node = Getnode(n.Id);
+                    rnode = GetParent(rnode.Id);
+                    height++;
                 }
                 return height;
             }
@@ -63,7 +64,7 @@ namespace CompanyStructured.Logic
         {
             CompanyStructured.Common.Models.Node n = Getnode(id);
             CompanyStructured.Common.Models.Node parent;
-            if (n.parentId is  null)
+            if (n.parentId is null)
                 parent = GetRoot();
             else
             {
@@ -74,26 +75,26 @@ namespace CompanyStructured.Logic
             {
                 Id = parent.Id,
                 Name = parent.name,
-                ParentId = parent.parentId               
+                ParentId = parent.parentId
             };
             return rparent;
         }
-        public NodeByParentName GetNodeWithParentName(int id)
-        {
-           CompanyStructured.Common.Models.Node n = Getnode(id);
-            NodeByParentName nodebyparentname = new NodeByParentName
-            {
-                Id = n.Id,
-                Name = n.name,
-                DirectParentId = n.parentId,
-                DirectParentName = nodes.Where(r => r.Id == n.parentId).Select(nn => nn.name).FirstOrDefault()
-            };
-            return nodebyparentname;
-        }
+        //public NodeByParentName GetNodeWithParentName(int id)
+        //{
+        //   CompanyStructured.Common.Models.Node n = Getnode(id);
+        //    NodeByParentName nodebyparentname = new NodeByParentName
+        //    {
+        //        Id = n.Id,
+        //        Name = n.name,
+        //        DirectParentId = n.parentId,
+        //        DirectParentName = n.parentId is null? string.Empty : nodes.Where(r => r.Id == n.parentId).Select(nn => nn.name).FirstOrDefault()
+        //    };
+        //    return nodebyparentname;
+        //}
         public CompanyStructured.Common.Models.Node Getnode(int nodeid)
         {
             nodes = new List<Common.Models.Node>();
-            using (var ctx = new CompanyStructuredContext())
+            using (var ctx = new Entities())
             {
                 CompanyStructuredSample.Repository.Node findednode = ctx.Node.Where(r => r.Id == nodeid).Single();
                 CompanyStructured.Common.Models.Node n = new CompanyStructured.Common.Models.Node
@@ -107,31 +108,55 @@ namespace CompanyStructured.Logic
                 return n;
             }
         }
-        public IEnumerable<CompanyStructured.Common.Models.Node> Get_all_children(CompanyStructured.Common.Models.Node n)
+        public IEnumerable<CompanyStructured.Common.Models.Node > Get_all_children(CompanyStructured.Common.Models.Node n)
         {
-            using (var ctx = new CompanyStructuredContext())
+            
+            using (CompanyStructuredSample.Repository.Entities ctx = new CompanyStructuredSample.Repository.Entities())
             {
-                IQueryable<CompanyStructuredSample.Repository.Node> ns = ctx.Node.Where(child => child.ParentId == n.Id);
-                foreach (var node in ns)
+                List< CompanyStructured.Common.Models.Node  > nodes = new List<CompanyStructured.Common.Models.Node>() ;
+
+
+                IEnumerable<GetDescendantsByParentId_Result> results = ctx.GetDescendantsByParentId(n.Id);
+
+                foreach(GetDescendantsByParentId_Result node in results )
                 {
                     CompanyStructured.Common.Models.Node nodmodel = new Common.Models.Node
                     {
-                        Id = node.Id,
+                        Id = (int)node.Id ,
                         name = node.Name,
                         parentId = node.ParentId
                     };
                     nodes.Add(nodmodel);
-                    Get_all_children(nodmodel);
-                }
+                };
+
+
+
+                //  Parallel.ForEach(ns, node =>
+                //{
+                //    CompanyStructured.Common.Models.Node nodmodel = new Common.Models.Node
+                //    {
+                //        Id = node.Id,
+                //        name = node.Name,
+                //        parentId = node.ParentId
+                //    };
+                //    nodes.Add(nodmodel);
+                //    Thread t = new Thread(() => Get_all_children(nodmodel));
+                //    lt.Add(t);
+                //});
+                //  Parallel.ForEach(lt, tr =>
+                //{
+                //    tr.Start();
+                //});
+
                 return nodes;
             }
         }
         //It's supposed if changed the parentid of given node the parent of their children dont changed
         public bool Change_the_parent_node_of_a_given_node(parentchange pc)
         {
-            using (var ctx = new CompanyStructuredContext())
+            using (var ctx = new Entities())
             {
-                CompanyStructuredSample.Repository.Node given_node =  ctx.Node.SingleOrDefault(nc => nc.Id == pc.id);
+                CompanyStructuredSample.Repository.Node given_node = ctx.Node.SingleOrDefault(nc => nc.Id == pc.id);
                 given_node.ParentId = pc.newparentid;
                 ctx.Node.Attach(given_node);
                 ctx.Entry(given_node).State = System.Data.Entity.EntityState.Modified;

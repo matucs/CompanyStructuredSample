@@ -23,18 +23,18 @@ namespace CompanyStructured.WebAPI.Controllers
             _CompanyHierarchy = Services.Instance;
 
             Node node = _CompanyHierarchy.Getnode(id);
-            IList<NodeByParentName> resultsviewmodel = new List<NodeByParentName>();
-            IEnumerable<Node> resultsnodes = _CompanyHierarchy.Get_all_children(node);
-            foreach (var nd in resultsnodes)
-            {
-                resultsviewmodel.Add(ConvertViewModelToNodeByParentName(nd.Id));
-            }
+           // IList<NodeByParentName> resultsviewmodel = new List<NodeByParentName>();
+            IEnumerable<Node> resultsnodes =  _CompanyHierarchy.Get_all_children(node);
+            //foreach (var nd in resultsnodes)
+            //{
+            //    resultsviewmodel.Add(ConvertViewModelToNodeByParentName(nd.Id));
+            //}
 
-            return Share.Json<NodeByParentName>(resultsviewmodel);
+            return  Share.Json<Node>(resultsnodes);
         }
-        public NodeByParentName ConvertViewModelToNodeByParentName(int id)
-        {
-            return _CompanyHierarchy.GetNodeWithParentName(id);
-        }
+       // public NodeByParentName ConvertViewModelToNodeByParentName(int id)
+        //{
+        //    return _CompanyHierarchy.GetNodeWithParentName(id);
+        //}
     }
 }

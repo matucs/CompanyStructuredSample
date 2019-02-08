@@ -1,4 +1,3 @@
-c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\obj\Debug\Client[webapi_consumer].csprojResolveAssemblyReference.cache
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\roslyn\csc.exe
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
@@ -37,10 +36,8 @@ c:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Cli
 c:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\Newtonsoft.Json.pdb
 c:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\Newtonsoft.Json.xml
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\obj\Debug\Client[webapi_consumer].csproj.CoreCompileInputs.cache
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.dll
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.WebRequest.dll
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.xml
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.WebRequest.xml
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.Extensions.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.Formatting.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\bin\System.Net.Http.Primitives.dll
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\obj\Debug\Client[webapi_consumer].csprojAssemblyReference.cache
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Client[webapi_consumer]\obj\Debug\Client[webapi_consumer].csproj.CopyComplete

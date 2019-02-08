@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="ParentId" Type="Int32" />
     <NavigationProperty Name="Node1" Relationship="Self.FK_Node_Node1" FromRole="Node" ToRole="Node1" />
@@ -22,11 +22,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CompanyStructuredContext" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Node" EntityType="Self.Node" />
     <AssociationSet Name="FK_Node_Node1" Association="Self.FK_Node_Node1">
       <End Role="Node" EntitySet="Node" />
       <End Role="Node1" EntitySet="Node" />
     </AssociationSet>
+    <FunctionImport Name="GetDescendantsByParentId" ReturnType="Collection(CompanyStructuredModel.GetDescendantsByParentId_Result)">
+      <Parameter Name="parentId1" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
+  <ComplexType Name="GetDescendantsByParentId_Result">
+    <Property Type="Int32" Name="Id" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="ParentId" Nullable="true" />
+  </ComplexType>
 </Schema>

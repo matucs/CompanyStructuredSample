@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
     <Property Name="ParentId" Type="int" />
   </EntityType>
@@ -20,6 +20,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="GetDescendantsByParentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parentId1" Type="int" Mode="In" />
+  </Function>
   <EntityContainer Name="CompanyStructuredModelStoreContainer">
     <EntitySet Name="Node" EntityType="Self.Node" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Node_Node1" Association="Self.FK_Node_Node1">
