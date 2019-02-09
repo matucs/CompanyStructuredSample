@@ -14,7 +14,7 @@ namespace Client_webapi_consumer_.Controllers
     public class RootController : Controller
     {
         // GET: Root
-        string Baseurl = "http://localhost/CompanyStructured.WebAPI";
+        string Baseurl = "http://CompanyStructured.WebAPI/";
         public async Task<ActionResult> Index()
         {
             Node root = new Node();

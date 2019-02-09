@@ -4,7 +4,11 @@ services:
   clientwebapi_consumer:
     ports:
       - "80"
+  companystructured.webapi:
+    ports:
+      - "80"
 networks:
   default:
     external:
       name: nat
+
