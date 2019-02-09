@@ -1,8 +1,8 @@
-version: '3'
+version: '3.4'
 
 services:
   clientwebapi_consumer:
-    image: clientwebapi_consumer
+    image: ${DOCKER_REGISTRY-}clientwebapiconsumer
     build:
       context: .\Client[webapi_consumer]
       dockerfile: Dockerfile

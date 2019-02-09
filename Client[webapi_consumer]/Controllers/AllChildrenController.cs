@@ -13,8 +13,16 @@ namespace Client_webapi_consumer_.Controllers
     {
         // GET: AllChildren
         string Baseurl = "http://localhost:9907/";
-        public async Task<ActionResult> Index(int id)
+
+        public ActionResult Index()
         {
+            List<Node> nodes = new List<Node>();
+            return View(nodes);
+        }
+        [HttpPost]
+        public async Task<ActionResult> Index(string txtnodeid)
+        {
+      
             List<Node> nodes = new List<Node>();
 
             using (var client = new HttpClient())
@@ -27,7 +35,7 @@ namespace Client_webapi_consumer_.Controllers
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 //Sending request to find web api REST service resource GetAllchildren using HttpClient  
-                HttpResponseMessage Res = await client.GetAsync($"api/Hierarchy/{id}");
+                HttpResponseMessage Res = await client.GetAsync($"api/Hierarchy/{txtnodeid}");
                 //Checking the response is successful or not which is sent using HttpClient  
                 if (Res.IsSuccessStatusCode)
                 {

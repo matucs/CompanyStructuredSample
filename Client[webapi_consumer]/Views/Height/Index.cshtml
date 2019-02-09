@@ -5,9 +5,42 @@
 
 <h2>height of given node is:</h2>
 
-<div>
-    <h4>
-        @ViewBag.height
-    </h4>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<div class="form-horizontal">
+    <hr />
+    <div class="form-group">
+
+        <div class="col-md-10">
+            <input id="txtnodeid" type="text" value="" />
+
+        </div>
+    </div>
+    <p id="result">
+
+    </p>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input id="btnSubmit" type="submit" onclick="Getrequest()" value="get height of the node" class="btn btn-default" />
+        </div>
+    </div>
 </div>
+
+@Html.ActionLink("Back", "Index", "Home")
+
+<script>
+    function Getrequest() {
+        $.ajax({
+            url: '@Url.Action("getheight", "Height")',
+            type: 'Get',
+            data: { id: $('#txtnodeid').val() },
+            dataType: 'json',
+            success: function (data) {
+                $('#result').text( 'Height of the node is :' + data);
+            }
+        });
+    }
+</script>
+
+
+
 

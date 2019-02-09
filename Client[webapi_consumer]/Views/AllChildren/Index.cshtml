@@ -6,25 +6,78 @@
 
 <h2>All children</h2>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Id)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-    </tr>
+@using (Html.BeginForm("Index", "AllChildren", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Id)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-    </tr>
+            <div class="col-md-10">
+                <input name="txtnodeid" type="text" />
+
+            </div>
+        </div>
+
+
+        <input id="btn" onclick="Getrequest()" type="submit" value="get all decsendants" class="btn btn-default" />
+    </div>
+
+    @Html.ActionLink("Back", "Index", "Home")
+    <table id="tblEmployee" class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+            </tr>
+        }
+
+    </table>
 }
+<script type="text/javascript">
+    function Getrequest() {
+        @ViewBag.id=  $('#txtnodeid').val()
+    }
+</script>
+@*<script type="text/javascript">
 
-</table>
+    function Getrequest() {
+        $.get('@Url.Action("Index", "AllChildren")', { id: $('#txtnodeid').val() }, function (data) {
+            var tblEmployee = $("#tblEmployee");
+            $.each(data, function (index, item) {
+                var tr = $("<tr></tr>");
+                tr.html(("<td>" + item.Id + "</td>")
+               // tblEmployee.append(tr);
+                    alert(tr);
+
+            });
+        });
+    }
+    </script>*@
+
+@*<script>
+        function Getrequest() {
+            $.ajax({
+                url: '@Url.Action("Index", "AllChildren")',
+                type: 'Get',
+                data: { id: $('#txtnodeid').val() },
+                dataType: 'json',
+                success: function (data) {
+                    alert(data)
+                }
+            });
+        }
+    </script>*@

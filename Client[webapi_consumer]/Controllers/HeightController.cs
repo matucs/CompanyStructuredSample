@@ -14,9 +14,16 @@ namespace Client_webapi_consumer_.Controllers
     {
         // GET: Height
         string Baseurl = "http://localhost:9907/";
-        public async Task<ActionResult> Index(int id)
+        int height = 0;
+
+        public ActionResult Index()
         {
-            int height = 0;
+            ViewBag.Baseurl = Baseurl;
+            return View();
+        }
+        public async Task<int> getheight(int id)
+        {
+           
             using (var client = new HttpClient())
             {
                 //Passing service base url  
@@ -24,24 +31,21 @@ namespace Client_webapi_consumer_.Controllers
 
                 client.DefaultRequestHeaders.Clear();
                 //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                //Sending request to find web api REST service resource GetAllchildren using HttpClient  
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json")); 
                 HttpResponseMessage Res = await client.GetAsync($"api/Height/{id}");
-                //Checking the response is successful or not which is sent using HttpClient  
+ 
                 if (Res.IsSuccessStatusCode)
                 {
-                    //Storing the response details recieved from web api   
+                     
                     var Response = Res.Content.ReadAsStringAsync().Result;
-
-                    //Deserializing the response recieved from web api and storing into the Node list  
+ 
 
                     height = new System.Web.Script.Serialization.JavaScriptSerializer().Deserialize<int>(Response);
                 }
                 //returning the node list to view  
-                ViewBag.height = height;
-                return View();
+                return height;
             }
         }
+ 
     }
 }
