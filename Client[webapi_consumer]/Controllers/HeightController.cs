@@ -13,7 +13,7 @@ namespace Client_webapi_consumer_.Controllers
     public class HeightController : Controller
     {
         // GET: Height
-        string Baseurl = "http://localhost:9907/";
+        string Baseurl = "http://localhost/CompanyStructured.WebAPI";
         int height = 0;
 
         public ActionResult Index()

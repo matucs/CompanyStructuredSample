@@ -18,7 +18,7 @@ namespace Client_webapi_consumer_.Controllers
     public class Change_Current_Parent_Controller : Controller
     {
         // GET: Change_Current_Parent_
-        string baseUri = "http://localhost:9907/";
+        string baseUri = "http://localhost/CompanyStructured.WebAPI";
 
         public ActionResult Index()
         {
