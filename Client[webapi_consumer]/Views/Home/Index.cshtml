@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Get descendants of given node", "Index" , "AllChildren" ,null , null)
+</p>
+<p>
+    @Html.ActionLink("Change Parent", "Index", "Change_Current_Parent_", null, null)
+</p>
+<p>
+    @Html.ActionLink("Get height of the given node", "Index", "Height", null, null)
+</p>
+<p>
+    @Html.ActionLink("Get Root of tree", "Index", "root", null, null)
+</p>
