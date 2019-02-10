@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Windows</DockerTargetOS>
-    <ProjectGuid>2801956c-d757-44f6-98a2-917679d51050</ProjectGuid>
+    <ProjectGuid>37983514-f8c4-4ac3-ba25-291040a4ee07</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>http://{ServiceIPAddress}</DockerServiceUrl>
     <DockerServiceName>clientwebapi_consumer</DockerServiceName>

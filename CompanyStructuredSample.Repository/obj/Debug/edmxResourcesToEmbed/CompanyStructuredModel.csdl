@@ -31,6 +31,9 @@
     <FunctionImport Name="GetDescendantsByParentId" ReturnType="Collection(CompanyStructuredModel.GetDescendantsByParentId_Result)">
       <Parameter Name="parentId1" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="GetHeightById" ReturnType="Collection(Int32)">
+      <Parameter Name="Id1" Mode="In" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="GetDescendantsByParentId_Result">
     <Property Type="Int32" Name="Id" Nullable="true" />

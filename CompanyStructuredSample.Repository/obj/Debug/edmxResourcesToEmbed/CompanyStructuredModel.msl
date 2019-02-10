@@ -19,5 +19,6 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHeightById" FunctionName="CompanyStructuredModel.Store.GetHeightById" />
   </EntityContainerMapping>
 </Mapping>

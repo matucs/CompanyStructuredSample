@@ -12,7 +12,7 @@ namespace Client_webapi_consumer_.Controllers
     public class AllChildrenController : Controller
     {
         // GET: AllChildren
-        string Baseurl = "http://localhost/CompanyStructured.WebAPI";
+        string Baseurl = "http://CompanyStructured.WebAPI/";
 
         public ActionResult Index()
         {

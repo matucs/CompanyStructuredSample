@@ -3,17 +3,19 @@ version: '3.4'
 services:
   clientwebapi_consumer:
     image: ${DOCKER_REGISTRY-}clientwebapiconsumer
-    environment:
-      - ClientUrl=http://sampleclient/
     build:
       context: .\Client[webapi_consumer]
       dockerfile: Dockerfile
 
   companystructured.webapi:
     image: ${DOCKER_REGISTRY-}companystructuredwebapi
-    environment:
-      - ApiUrl=http://sampleapi/
     build:
       context: .\CompanyStructured.WebAPI
       dockerfile: Dockerfile
+
+  db:
+    image:  ${DOCKER_REGISTRY-}microsoft/mssql-server-windows-express
+
+    ports: 
+      - "1433:1433"
 

@@ -41,24 +41,29 @@ namespace CompanyStructured.Logic
         }
         public int GetHeight(CompanyStructured.Common.Models.Node n)
         {
-            int height = 0;
-            CompanyStructuredSample.Repository.Node rnode = new CompanyStructuredSample.Repository.Node
-            {
-                Id = n.Id,
-                Name = n.name,
-                ParentId = n.parentId
-            };
-
             using (var ctx = new Entities())
             {
-                while (rnode.ParentId != null)
-                {
-                    Common.Models.Node node = Getnode(n.Id);
-                    rnode = GetParent(rnode.Id);
-                    height++;
-                }
-                return height;
+               return  (int)ctx.GetHeightById((int)n.Id).First();
             }
+
+            //int height = 0;
+            //CompanyStructuredSample.Repository.Node rnode = new CompanyStructuredSample.Repository.Node
+            //{
+            //    Id = n.Id,
+            //    Name = n.name,
+            //    ParentId = n.parentId
+            //};
+
+            //using (var ctx = new Entities())
+            //{
+            //    while (rnode.ParentId != null)
+            //    {
+            //        Common.Models.Node node = Getnode(n.Id);
+            //        rnode = GetParent(rnode.Id);
+            //        height++;
+            //    }
+            //    return height;
+            //}
         }
         public CompanyStructuredSample.Repository.Node GetParent(int id)
         {

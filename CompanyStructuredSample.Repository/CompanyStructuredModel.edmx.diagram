@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="410bd4e3a17846718d703641f32ebadf" Name="Diagram1">
+      <Diagram DiagramId="283e4909f0534ac48fabcff7b5f7f49f" Name="Diagram1">
         <EntityTypeShape EntityType="CompanyStructuredModel.Node" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="CompanyStructuredModel.FK_Node_Node1" ManuallyRouted="false" />
       </Diagram>

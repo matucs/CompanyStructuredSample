@@ -7,11 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Collections.Generic;
+
 namespace CompanyStructuredSample.Repository
 {
-    using System;
-    using System.Collections.Generic;
-    
+
     public partial class Node
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,11 @@ namespace CompanyStructuredSample.Repository
         {
             this.Node1 = new HashSet<Node>();
         }
-    
+
         public int Id { get; set; }
         public string Name { get; set; }
         public Nullable<int> ParentId { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Node> Node1 { get; set; }
         public virtual Node Node2 { get; set; }

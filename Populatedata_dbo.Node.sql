@@ -1,6 +1,7 @@
 ﻿USE [CompanyStructured]
 GO
 
+
 /****** Object: Table [dbo].[Node] Script Date: 2019/02/08 02:32:48 AM ******/
 SET ANSI_NULLS ON
 GO
@@ -12,11 +13,17 @@ delete from dbo.Node
 
 go
 
-DECLARE @NumberOfRecordsToInsert INT = 5000;
-DECLARE @Inner INT = 1;
-DECLARE @id1 INT = 1;
-DECLARE @name1 nvarchar(70) = 'CEO ';
-DECLARE @parentId1 INT = null;
+DECLARE @NumberOfRecordsToInsert INT ;
+set @NumberOfRecordsToInsert = 100;
+DECLARE @Inner INT ;
+set @Inner =1;
+DECLARE @id1 INT ;
+set @id1 = 1;
+DECLARE @name1 nvarchar(70) ;
+set @name1 = 'CEO ';
+DECLARE @parentId1 INT ;
+set @parentId1 = null;
+
 SET NOCOUNT ON
 WHILE (@NumberOfRecordsToInsert > 0)
 BEGIN

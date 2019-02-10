@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CompanyStructuredModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CompanyStructuredModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Node">
           <Key>
             <PropertyRef Name="Id" />
@@ -27,6 +27,9 @@
         </Association>
         <Function Name="GetDescendantsByParentId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parentId1" Type="int" Mode="In" />
+        </Function>
+        <Function Name="GetHeightById" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id1" Type="int" Mode="In" />
         </Function>
         <EntityContainer Name="CompanyStructuredModelStoreContainer">
           <EntitySet Name="Node" EntityType="Self.Node" Schema="dbo" store:Type="Tables" />
@@ -71,6 +74,9 @@
           <FunctionImport Name="GetDescendantsByParentId" ReturnType="Collection(CompanyStructuredModel.GetDescendantsByParentId_Result)">
             <Parameter Name="parentId1" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="GetHeightById" ReturnType="Collection(Int32)">
+            <Parameter Name="Id1" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="GetDescendantsByParentId_Result">
           <Property Type="Int32" Name="Id" Nullable="true" />
@@ -101,6 +107,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetHeightById" FunctionName="CompanyStructuredModel.Store.GetHeightById" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
