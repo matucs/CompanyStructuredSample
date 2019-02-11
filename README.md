@@ -47,7 +47,7 @@ To reach better performance I have tested several ways such as
 •	Multi-threading
 •	Using of CTE query.
  Finally CTE query is used in my project.
-I also have used a query to populate dummy data to Node table as a test [The query is called Populatedata_dbo.Node.sql and it is in root folder of the project and you can use it]. I’ve inserted about 100000 dummy data in Node table and tested this API (GetAllChildren) with an ordinary laptop. The performance was good for this amount of data.
+I also have used a query to populate dummy data to Node table as a test [The query is called Populatedata_dbo.Node.sql and it is in Scripts folder of the project and you can use it]. I’ve inserted about 100000 dummy data in Node table and tested this API (GetAllChildren) with an ordinary laptop. The performance was good for this amount of data.
 2.	ChangeCurrentParent(nodeId , newParentId) with URL is built in Docker: http://companystructured.webapi/api/changeparent
 This service will change parent of the node and the response will be HttpMessage that shows the response message was successful or not. This service uses HttpPost method
 3.	GetRoot() with URL is built in Docker: http://companystructured.webapi/api/Root
