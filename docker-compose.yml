@@ -13,9 +13,9 @@ services:
       context: .\CompanyStructured.WebAPI
       dockerfile: Dockerfile
 
-  db:
-    image:  ${DOCKER_REGISTRY-}microsoft/mssql-server-windows-express
-
-    ports: 
-      - "1433:1433"
-
+  localhost:
+    image:  microsoft/mssql-server-windows-express
+    environment:
+            SA_PASSWORD: "123"
+            ACCEPT_EULA: "Y"
+   
