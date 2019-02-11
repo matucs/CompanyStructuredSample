@@ -55,4 +55,4 @@ This service shows the Root node as its response. It doesn’t have any input pa
 It is mentionable root node is unique all over tree so I decided to put root definition as a service not as node feature. If I put it as node feature it would use memory.
 4.	GetHeight(nodeId) with URL is built in Docker: http://companystructured.webapi/api/Height/nodeid
 This service will give height of the node with nodeId and the response will be height of this node which is an integer. This service uses HttpGet method.
-This API has time complexity = O (Log n). Because in the worst case you want to know the height of last child of tree and it has to traverse tree to get root node to count its height.
+This API has time complexity = O (Log n). Because in the worst case you want to know the height of last child of tree and it has to traverse tree to get root node to count its height. In case of performance I use CTE query agine to get height and it works fine even for a million of nodes easily.
