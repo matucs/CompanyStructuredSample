@@ -1,0 +1,30 @@
+﻿USE [CompanyStructured]
+GO
+
+/****** Object:  Table [dbo].[Node]    Script Date: 2019/02/12 12:57:08 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Node](
+	[Id] [int] NOT NULL,
+	[Name] [nchar](50) NOT NULL,
+	[ParentId] [int] NULL,
+ CONSTRAINT [PK_Node] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Node]  WITH CHECK ADD  CONSTRAINT [FK_Node_Node1] FOREIGN KEY([ParentId])
+REFERENCES [dbo].[Node] ([Id])
+GO
+
+ALTER TABLE [dbo].[Node] CHECK CONSTRAINT [FK_Node_Node1]
+GO
+
+
