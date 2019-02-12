@@ -10,15 +10,13 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 using System.Net.Http.Formatting;
-
-
+using System.Web.Configuration;
 
 namespace Client_webapi_consumer_.Controllers
 {
     public class Change_Current_Parent_Controller : Controller
     {
         // GET: Change_Current_Parent_
-        string baseUri = "http://CompanyStructured.WebAPI/";
 
         public ActionResult Index()
         {
@@ -32,7 +30,7 @@ namespace Client_webapi_consumer_.Controllers
             using (var client = new HttpClient())
             {
                 // Update port # in the following line.
-                client.BaseAddress = new Uri(baseUri);
+                client.BaseAddress = new Uri(Share.Baseurl);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));

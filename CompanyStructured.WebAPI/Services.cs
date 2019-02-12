@@ -9,17 +9,10 @@ namespace CompanyStructured.WebAPI
 
     public sealed class Services
     {
-        static readonly CompanyHierarchy _instance = new CompanyHierarchy();
-        public static CompanyHierarchy Instance
+        public readonly ICompanyHierarchy _instance ;
+        private Services(ICompanyHierarchy companyHierarchy)
         {
-            get
-            {
-                return _instance;
-            }
-        }
-        Services()
-        {
-            
+            this._instance = companyHierarchy;
         }
     }
 }

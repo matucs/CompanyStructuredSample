@@ -7,6 +7,7 @@ using System.Web.Routing;
 
 namespace Client_webapi_consumer_
 {
+
     public class MvcApplication : System.Web.HttpApplication
     {
         protected void Application_Start()

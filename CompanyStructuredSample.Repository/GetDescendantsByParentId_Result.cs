@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
 namespace CompanyStructuredSample.Repository
 {
+    using System;
+    
     public partial class GetDescendantsByParentId_Result
     {
         public Nullable<int> Id { get; set; }

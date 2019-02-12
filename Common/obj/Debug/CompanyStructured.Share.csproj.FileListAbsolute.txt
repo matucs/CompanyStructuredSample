@@ -3,4 +3,3 @@ c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Com
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Common\obj\Debug\Common.dll
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Common\obj\Debug\Common.pdb
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Common\obj\Debug\CompanyStructured.Share.csproj.CoreCompileInputs.cache
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Common\obj\Debug\CompanyStructured.Share.csprojAssemblyReference.cache

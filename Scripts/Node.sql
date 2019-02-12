@@ -1,7 +1,7 @@
-﻿USE [CompanyStructured]
+USE [CompanyStructured]
 GO
 
-/****** Object:  Table [dbo].[Node]    Script Date: 2019/02/12 12:57:08 AM ******/
+/****** Object:  Table [dbo].[Node]    Script Date: 2019/02/12 06:31:23 PM ******/
 SET ANSI_NULLS ON
 GO
 

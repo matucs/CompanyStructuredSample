@@ -7,42 +7,43 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Core.Objects;
-using System.Linq;
 namespace CompanyStructuredSample.Repository
 {
+    using System;
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
+    
     public partial class Entities : DbContext
     {
         public Entities()
             : base("name=Entities")
         {
         }
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
+    
         public virtual DbSet<Node> Node { get; set; }
-
+    
         public virtual ObjectResult<GetDescendantsByParentId_Result> GetDescendantsByParentId(Nullable<int> parentId1)
         {
             var parentId1Parameter = parentId1.HasValue ?
                 new ObjectParameter("parentId1", parentId1) :
                 new ObjectParameter("parentId1", typeof(int));
-
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetDescendantsByParentId_Result>("GetDescendantsByParentId", parentId1Parameter);
         }
-
+    
         public virtual ObjectResult<Nullable<int>> GetHeightById(Nullable<int> id1)
         {
             var id1Parameter = id1.HasValue ?
                 new ObjectParameter("Id1", id1) :
                 new ObjectParameter("Id1", typeof(int));
-
+    
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetHeightById", id1Parameter);
         }
     }

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 
 namespace Client_webapi_consumer_.Controllers
@@ -13,12 +14,12 @@ namespace Client_webapi_consumer_.Controllers
     public class HeightController : Controller
     {
         // GET: Height
-        string Baseurl = "http://CompanyStructured.WebAPI/";
+   
         int height = 0;
 
         public ActionResult Index()
         {
-            ViewBag.Baseurl = Baseurl;
+            ViewBag.Baseurl = Share.Baseurl;
             return View();
         }
         public async Task<int> getheight(int id)
@@ -27,7 +28,7 @@ namespace Client_webapi_consumer_.Controllers
             using (var client = new HttpClient())
             {
                 //Passing service base url  
-                client.BaseAddress = new Uri(Baseurl);
+                client.BaseAddress = new Uri(Share.Baseurl);
 
                 client.DefaultRequestHeaders.Clear();
                 //Define request data format  

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
@@ -12,7 +13,6 @@ namespace Client_webapi_consumer_.Controllers
     public class AllChildrenController : Controller
     {
         // GET: AllChildren
-        string Baseurl = "http://CompanyStructured.WebAPI/";
 
         public ActionResult Index()
         {
@@ -28,7 +28,7 @@ namespace Client_webapi_consumer_.Controllers
             using (var client = new HttpClient())
             {
                 //Passing service base url  
-                client.BaseAddress = new Uri(Baseurl);
+                client.BaseAddress = new Uri(Share.Baseurl);
 
                 client.DefaultRequestHeaders.Clear();
                 //Define request data format  

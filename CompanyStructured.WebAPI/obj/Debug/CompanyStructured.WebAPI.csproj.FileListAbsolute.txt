@@ -57,3 +57,7 @@ C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\Com
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\System.Net.Http.Primitives.dll
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\obj\Debug\CompanyStructured.WebAPI.csprojAssemblyReference.cache
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\obj\Debug\CompanyStructured.WebAPI.csproj.CopyComplete
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\Castle.Core.dll
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\Castle.Windsor.dll
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\Castle.Core.xml
+C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructured.WebAPI\bin\Castle.Windsor.xml

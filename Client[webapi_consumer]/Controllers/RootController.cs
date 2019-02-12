@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Script.Serialization;
 
@@ -14,14 +15,14 @@ namespace Client_webapi_consumer_.Controllers
     public class RootController : Controller
     {
         // GET: Root
-        string Baseurl = "http://CompanyStructured.WebAPI/";
+        
         public async Task<ActionResult> Index()
         {
             Node root = new Node();
             using (var client = new HttpClient())
             {
                 //Passing service base url  
-                client.BaseAddress = new Uri(Baseurl);
+                client.BaseAddress = new Uri(Share.Baseurl);
 
                 client.DefaultRequestHeaders.Clear();
                 //Define request data format  
