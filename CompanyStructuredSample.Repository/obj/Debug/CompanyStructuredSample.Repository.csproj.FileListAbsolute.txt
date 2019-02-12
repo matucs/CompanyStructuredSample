@@ -9,4 +9,3 @@ c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\Com
 c:\users\gcoms\documents\visual studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.pdb
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.csproj.CoreCompileInputs.cache
 C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.csproj.CopyComplete
-C:\Users\GCOMS\Documents\Visual Studio 2015\Projects\CompanyStructuredSample\CompanyStructuredSample.Repository\obj\Debug\CompanyStructuredSample.Repository.csprojAssemblyReference.cache

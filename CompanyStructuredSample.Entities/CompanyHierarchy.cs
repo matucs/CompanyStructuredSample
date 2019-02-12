@@ -15,7 +15,12 @@ namespace CompanyStructured.Logic
     {
         private List<CompanyStructured.Common.Models.Node> nodes;
 
-        private CompanyStructuredSample.Repository.IEntities ctx;
+        private CompanyStructuredSample.Repository.Entities ctx;
+
+        public CompanyHierarchy()
+        {
+            this.ctx = new Entities();
+        }
 
         public bool Isroot(CompanyStructured.Common.Models.Node n)
         {
